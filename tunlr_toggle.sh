@@ -2,7 +2,7 @@
 $QUERY = $1
 
 function notify () {
-  if [ "$(sw_vers -productVersion)" > "10.7" ]; then
+  if [ "$(sw_vers -productVersion)" \> "10.7" ]; then
     ./terminal-notifier.app/Contents/MacOS/terminal-notifier \
       -title "$1" \
       -message "$2" \
