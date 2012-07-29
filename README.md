@@ -14,7 +14,7 @@ Eloy Durán's [terninal-notifier](https://github.com/alloy/terminal-notifier)
 
 ## Installation
 
-*This assumes that you have already installed [Alfred](http://www.alfredapp.com/).**
+*This assumes that you have already installed [Alfred](http://www.alfredapp.com/).*
 
 1. Download the latest release from the [Downloads page](https://github.com/k33l0r/toggle_tunlr/downloads)
 2. Double click the downloaded file
