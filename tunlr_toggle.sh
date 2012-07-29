@@ -1,17 +1,43 @@
-export ON="networksetup -setdnsservers Wi-Fi 149.154.158.186 199.167.30.144"
-for i in "$@"; do export ON="$ON '${i}'";done
+#!/bin/bash
+$QUERY = $1
 
-export OFF="networksetup -setdnsservers Wi-Fi Empty"
-for i in "$@"; do export OFF="$OFF '${i}'";done
+function notify () {
+  if [ "$(sw_vers -productVersion)" > "10.7" ]; then
+    ./terminal-notifier.app/Contents/MacOS/terminal-notifier \
+      -title "$1" \
+      -message "$2" \
+      -group "tunlr_alfred_extension" \
+      -open "http://tunlr.net/status/"
+  fi
+}
 
-if networksetup -getdnsservers Wi-Fi | grep -q "aren't"; then
-  osascript -e "do shell script \"$ON\" with administrator privileges"
-  if [ "$(sw_vers -productVersion)" > "10.7" ]; then
-    ./terminal-notifier.app/Contents/MacOS/terminal-notifier -message "The Tunlr DNS servers were set" -title "Tunlr" -group "tunlr_alfred_extension" -open "http://tunlr.net/status/"
-  fi
-else
-  osascript -e "do shell script \"$OFF\" with administrator privileges"
-  if [ "$(sw_vers -productVersion)" > "10.7" ]; then
-    ./terminal-notifier.app/Contents/MacOS/terminal-notifier -message "The Tunlr DNS servers were unset" -title "Tunlr" -group "tunlr_alfred_extension" -open "http://tunlr.net/status/"
-  fi
-fi
+function execute_with_privilege_escalation () {
+  osascript -e "do shell script \"$1\" with administrator privileges"
+}
+
+function tunlr_on () {
+  execute_with_privilege_escalation "networksetup -setdnsservers Wi-Fi 149.154.158.186 199.167.30.144" && \
+  notify "Tunlr on" "The Tunlr DNS servers were set"
+}
+
+function tunlr_off () {
+  execute_with_privilege_escalation "networksetup -setdnsservers Wi-Fi Empty" && \
+  notify "Tunlr off" "The Tunlr DNS servers were unset"
+}
+
+case "$1" in
+  "on")
+    tunlr_on;;
+  "off")
+    tunlr_off;;
+  "status")
+    notify "Current nameservers" "$(networksetup -getdnsservers Wi-Fi)";;
+  "")
+    # Toggle servers if not told other wise
+    if networksetup -getdnsservers Wi-Fi | grep -q "aren't"; then
+      tunlr_on
+    else
+      tunlr_off
+    fi
+    ;;
+esac

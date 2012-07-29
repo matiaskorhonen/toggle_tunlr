@@ -7,7 +7,7 @@
 	<key>category</key>
 	<string>SCRIPTS</string>
 	<key>command</key>
-	<string>sh ./tunlr_toggle.sh</string>
+	<string>sh ./tunlr_toggle.sh "{query}"</string>
 	<key>disabled</key>
 	<false/>
 	<key>escapequery</key>
@@ -31,7 +31,7 @@
 	<key>multifileargs</key>
 	<false/>
 	<key>parameter</key>
-	<integer>1</integer>
+	<integer>2</integer>
 	<key>silent</key>
 	<true/>
 	<key>subtitle</key>
