@@ -7,11 +7,11 @@ for i in "$@"; do export OFF="$OFF '${i}'";done
 if networksetup -getdnsservers Wi-Fi | grep -q "aren't"; then
   osascript -e "do shell script \"$ON\" with administrator privileges"
   if [ "$(sw_vers -productVersion)" > "10.7" ]; then
-    ./terminal-notifier.app/Contents/MacOS/terminal-notifier -message "The Tunlr DNS servers were set" -title "Tunlr" -group "tunlr_alfred_extension"
+    ./terminal-notifier.app/Contents/MacOS/terminal-notifier -message "The Tunlr DNS servers were set" -title "Tunlr" -group "tunlr_alfred_extension" -open "http://tunlr.net/status/"
   fi
 else
   osascript -e "do shell script \"$OFF\" with administrator privileges"
   if [ "$(sw_vers -productVersion)" > "10.7" ]; then
-    ./terminal-notifier.app/Contents/MacOS/terminal-notifier -message "The Tunlr DNS servers were unset" -title "Tunlr" -group "tunlr_alfred_extension"
+    ./terminal-notifier.app/Contents/MacOS/terminal-notifier -message "The Tunlr DNS servers were unset" -title "Tunlr" -group "tunlr_alfred_extension" -open "http://tunlr.net/status/"
   fi
 fi
