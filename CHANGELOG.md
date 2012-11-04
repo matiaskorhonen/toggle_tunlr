@@ -1,6 +1,10 @@
 Toggle Tunlr Changelog
 ======================
 
+v2.1.0 [2012-11-04]
+--------------------
+
+- Adds [Alfred Extension Updater](http://jdfwarrior.tumblr.com/post/13826478125/extension-updater) support
 
 v2.0.0 [2012-07-29]
 --------------------
