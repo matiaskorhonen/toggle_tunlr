@@ -8,10 +8,6 @@ back again.
 The script naïvely assumes that you are using a Wi-Fi network and that you
 normally don't have any DNS servers manually set.
 
-On Mountain Lion (OS X 10.8) OS X User Notifications are sent using
-Eloy Durán's [terninal-notifier](https://github.com/alloy/terminal-notifier)
-(the precompiled binary is included).
-
 ## Installation
 
 *This assumes that you have already installed [Alfred](http://www.alfredapp.com/).*
@@ -23,8 +19,6 @@ Eloy Durán's [terninal-notifier](https://github.com/alloy/terminal-notifier)
 
 *Note: All commands except for `tunlr status` require administrator privileges.*
 
-*All notifications require Mountain Lion (OS X 10.8), including `tunlr status`.*
-
 Toggle the Tunlr nameservers on and off: `tunlr`
 
 Switch the Tunlr nameservers on: `tunlr on`
@@ -35,6 +29,6 @@ Check the what the current nameservers are: `tunlr status`
 
 ## License and copyright
 
-MIT License. Copyright (C) 2012 by Matias Korhonen
+MIT License. Copyright (c) 2012-2013 by Matias Korhonen
 
 See the LICENSE file for details.

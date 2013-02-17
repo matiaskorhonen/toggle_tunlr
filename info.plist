@@ -10,6 +10,8 @@
 	<string>sh ./tunlr_toggle.sh "{query}"</string>
 	<key>disabled</key>
 	<false/>
+	<key>escapedollar</key>
+	<false/>
 	<key>escapequery</key>
 	<true/>
 	<key>escapequerybackquotes</key>
@@ -21,7 +23,7 @@
 	<key>escapequerysemicolons</key>
 	<true/>
 	<key>growloutput</key>
-	<false/>
+	<true/>
 	<key>growloutputsticky</key>
 	<false/>
 	<key>keyword</key>
