@@ -1,6 +1,11 @@
 Toggle Tunlr Changelog
 ======================
 
+v2.2.0 [2013-02-17]
+--------------------
+
+- Use Alfred's built-in notifications support
+
 v2.1.0 [2012-11-04]
 --------------------
 

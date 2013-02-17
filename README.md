@@ -12,7 +12,7 @@ normally don't have any DNS servers manually set.
 
 *This assumes that you have already installed [Alfred](http://www.alfredapp.com/).*
 
-1. Download the latest release from the [Downloads page](https://github.com/k33l0r/toggle_tunlr/downloads)
+1. Download the latest release: [toggle_tunlr_v2.2.0.alfredextension](http://shots.matiaskorhonen.fi/alfred/toggle_tunlr_v2.2.0.alfredextension)
 2. Double click the downloaded file
 
 ## Usage
